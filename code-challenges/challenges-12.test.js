@@ -80,10 +80,13 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  let flatArray = cookieStores.flat(), sum = 0;
-  for (let i = 0; i < flatArray.length; i++) {
-    for (let j = 0; j < )
-
+  let totalArray = [0,0,0,0,0,0,0,0,0,0,0,0];
+  for (let i = 0; i < stores.length; i++) {
+    for (let j = 0; j < stores[i].length; j++) {
+      totalArray[j] += stores[i][j];
+    }
+  }
+  return totalArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
