@@ -11,11 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // let name = arr.match(/^Mr.|^Mrs.|^Ms.|^Dr./g);
-  // return name.test(arr);
+  let matches = arr.filter(value => /^(?:Mr|Mrs|Ms|Dr)\.\s\w+/.test(value));
+  return matches
 }
-
-// not working
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -128,10 +126,11 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  return arr.sort((a,b) => a.price > b.price ? 1 : -1);
+  return arr.sort((a,b) => a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1 );
+  return arr.sort((a,b) => a.price > b.price ? 1 : -1 );
 };
 
-// SKIPPED. PASSES HALF WAY
+// SKIPPED. PASSES HALF WAY. lines 129 and 130 work individually
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -147,11 +146,11 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   for (let i = 0; i < url.length; i++) {
-  }
-  if (url.includes('https://')) {
-    return (true);
-  } else  {
-    return (false);
+    if (url.includes('https://')) {
+      return (true);
+    } else  {
+      return (false);
+    }
   }
 }
 
