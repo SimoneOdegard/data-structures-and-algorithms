@@ -126,11 +126,12 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  return arr.sort((a,b) => a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1 );
-  return arr.sort((a,b) => a.price > b.price ? 1 : -1 );
+  if (property === "name") {
+    return arr.sort((a,b) => a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1 );
+  } else if (property === "price") {
+    return arr.sort((a,b) => a.price > b.price ? 1 : -1 );
+  }
 };
-
-// SKIPPED. PASSES HALF WAY. lines 129 and 130 work individually
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -174,7 +175,27 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let row1 = [board[0][0], board[0][1], board[0][2]];
+  let col1 = [board[0][0], board[1][0], board[2][0]];
+  let row2 = [board[1][0], board[1][1], board[1][2]];
+  let col2 = [board[0][1], board[1][1], board[2][1]];
+  let row3 = [board[2][0], board[2][1], board[2][2]];
+  let col3 = [board[0][2], board[1][2], board[2][2]];
+  let diag1 = [board[0][0], board[1][1], board[2][2]];
+  let diag2 = [board[0][2], board[1][1], board[2][0]];
+
+  return helpCheck(row1, col1, row2, col2, row3, col3, diag1, diag2);
+
+  function helpCheck(...positions) {
+    for (let i = 0; i < positions.length; i++) {
+      if (positions[i].join("") === "XXX") {
+        return true;
+      } else if (positions[i].join("") === "OOO") {
+        return true;
+      }
+    }
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
