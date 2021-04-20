@@ -28,4 +28,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 I used the .splice method. When googling, I found that this was the most common practice. I looked up how splice works and it seemed like it would be the most effective way to put the new value in the middle of the array.
 
 ### Solution
-![code challenge 2](./img/CC02.png)
+![code challenge 2](./assets/array-shift.png)
