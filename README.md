@@ -28,4 +28,19 @@ Write a function called insertShiftArray which takes in an array and the value t
 I used the .splice method. When googling, I found that this was the most common practice. I looked up how splice works and it seemed like it would be the most effective way to put the new value in the middle of the array.
 
 ### Solution
-![code challenge 2](./assets/array-shift.png)
+![code challenge 3](./assets/array-shift.png)
+
+## [Challenge 03 - array-binary-search](./javascript/code-challenges/arrayBinarySearch/array-binary-search.js)
+
+### Challenge Summary
+Write a function where you use binary search to find an element in the array
+
+### Challenge Description
+Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
+NOTE: The search algorithm used in your function should be a binary search.
+
+### Approach & Efficiency
+I used binary search. I had to look up how to use it and found this page: [link to resource](https://stackabuse.com/binary-search-in-javascript/). This page did a great job at explaining how this code works and what the process of this code is.
+
+### Solution
+![code challenge 3](./assets/array-binary-search.png)
