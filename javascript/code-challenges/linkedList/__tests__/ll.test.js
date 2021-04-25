@@ -48,7 +48,7 @@ describe('**Linked List**', () => {
     let first = 1;
 
     list.insert(first);
-    expect(list.includes(first)).toBe(true);
+    expect(list.includes(1)).toBe(true);
   });
 
   it('should return false when finding a value within the linked list that does not exist',  () => {
@@ -57,10 +57,19 @@ describe('**Linked List**', () => {
     let second = 2;
 
     list.insert(first);
-    expect(list.includes(second)).toBe(false);
+    expect(list.includes(2)).toBe(false);
   });
 
-  // it('should return a collection of all the values that exist in the linked list',  () => {
-    
-  // });
+  it('should return a collection of all the values that exist in the linked list',  () => {
+    let list = new LL();
+    let a = 1;
+    let b = 2;
+    let c = 3;
+
+    list.insert(a);
+    list.insert(b);
+    list.insert(c);
+    expect(list.toString()).toBe('{ 1 } -> { 2 } -> { 3 } -> NULL');
+
+  });
 });

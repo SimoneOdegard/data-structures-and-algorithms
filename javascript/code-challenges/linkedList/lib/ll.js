@@ -29,21 +29,24 @@ class LinkedList {
     let thisNode = this.head;
  
     while(thisNode) {
-        if(thisNode.value === val) {
-            return true;
-        }
-            
-        thisNode = thisNode.next;
+      if(thisNode.value === val) {
+        return true;
+      }
+      thisNode = thisNode.next;
     }
-     
     return false;
   }
 
   toString() {
     let thisNode = this.head;
+    let string = '';
 
-    // format "{ a } -> { b } -> { c } -> NULL"
-
+    while (thisNode) {
+      string += `{ ${thisNode.value} } -> `
+      if (thisNode.next === null){string += `NULL`} 
+      thisNode = thisNode.next;
+    }
+    return string;
   }
 }
 
