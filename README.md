@@ -71,3 +71,25 @@ Define a method for insert that adds a new node to the head of the list. Define 
 **includes** The method set thisNode to null with val as an argument. It goes through the while loop, if theNode's value strict equals to val then it will return true because that means it is found in the link list. If thisNode reaches the end at thisNode.next then it will return false.
 
 **toString** The method sets thisNode to null and string to an empty string. It goes through the while loop with thisNode. We have our empty string and we're adding the thisNode's value. If it reaches the end and is at thisNode.next which will equal null, then the string will add NULL. thisNode = thiseNode.next; will be the end of the loop and will return the populated string.
+
+## [Challenge 06 - array-binary-search](./javascript/code-challenges/linkedList/ll.js)
+
+### Challenge Summary
+Define a method for append that adds a new node to the end of the list. Define a method for insertBefore that adds a new node before a value. Define a method for insertAfter that adds a new node after a value.
+
+### Challenge Description
+- .append(value) which adds a new node with the given value to the end of the list
+- .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+- .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+### Approach & Efficiency
+- For the method called append, I used Brian's demo code. Append adds to the end.
+- I'm still working on the insertBefore method
+- I'm still working on the insertAfter method
+
+### API
+**append** The method creates a new node. If the head doesn't exist then it will set the head. Else, it will start the traversal. The while loop will go through everything and creates the actual traversal. When you get to the end you'll see current.next setting the node as the next value. At the end, return this to return the whole list.
+
+**insertBefore** work in progress
+
+**insertAfter** work in progress
