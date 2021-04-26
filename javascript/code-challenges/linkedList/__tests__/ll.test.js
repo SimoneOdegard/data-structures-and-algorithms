@@ -72,4 +72,59 @@ describe('**Linked List**', () => {
     expect(list.toString()).toBe('{ 1 } -> { 2 } -> { 3 } -> NULL');
 
   });
+
+  it('should add a node to the end of the linked list',  () => {
+    let list = new LL();
+    let first = 1;
+    let last = 5;
+
+    list.insert(first);
+    list.append(last);
+    expect(list.head.next.value).toEqual(5);
+
+    // console.log('append list', list);
+  });
+
+  it('should add multiple nodes to the end of a linked list',  () => {
+    let list = new LL();
+    let first = 1;
+    let second = 2;
+    let third = 3;
+
+    list.insert(first);
+    list.append(second);
+    list.append(third);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+
+    // console.log('multiple added to list', list);
+  });
+
+  it('should insert a node before a node located in the middle of a linked list',  () => {
+    let list = new LL();
+    let first = 1;
+    let second = 2;
+    let third = 3;
+
+    list.insert(first);
+    list.append(second);
+    list.insertBefore(third);
+    expect(list.insertBefore(third)).toEqual(3);
+
+    console.log('insertBefore list', list);
+    
+  });
+
+  it('should insert a node before the first node of a linked list',  () => {
+    
+  });
+
+  it('should insert after a node in the middle of the linked list',  () => {
+    
+  });
+
+  it('should insert a node after the last node of the linked list',  () => {
+    
+  });
+
 });
