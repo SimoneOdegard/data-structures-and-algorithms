@@ -14,5 +14,3 @@ ll.insert(20);
 ll.insert(999);
 
 console.log('2 items', ll);
-
-console.log(ll.includes(999));

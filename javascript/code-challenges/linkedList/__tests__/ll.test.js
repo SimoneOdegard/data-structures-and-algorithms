@@ -100,7 +100,7 @@ describe('**Linked List**', () => {
     // console.log('multiple added to list', list);
   });
 
-  it('should insert a node before a node located in the middle of a linked list',  () => {
+  xit('should insert a node before a node located in the middle of a linked list',  () => {
     let list = new LL();
     let first = 1;
     let second = 2;
@@ -109,14 +109,21 @@ describe('**Linked List**', () => {
     list.insert(first);
     list.append(second);
     list.insertBefore(third);
-    expect(list.insertBefore(third)).toEqual(3);
+    expect(list.insertBefore(third)).toEqual([1]);
 
-    console.log('insertBefore list', list);
+    // console.log('insertBefore list', list);
     
   });
 
-  it('should insert a node before the first node of a linked list',  () => {
-    
+  xit('should insert a node before the first node of a linked list',  () => {
+    let list = new LL();
+    let head = 1;
+    let second = 2;
+
+    list.insert(head);
+    list.insertBefore(second);
+    expect(list.insertBefore(second)).toEqual(2);
+    console.log('INSERTBEFORE LIST TESTING THIS OUT', list);
   });
 
   it('should insert after a node in the middle of the linked list',  () => {
@@ -126,5 +133,20 @@ describe('**Linked List**', () => {
   it('should insert a node after the last node of the linked list',  () => {
     
   });
+
+  /* === kthFromEnd === */
+  it('should work',  () => {
+    let list = new LL();
+    let first = 1;
+    let second = 2;
+    let third = 3;
+    
+    list.insert(first);
+    list.insert(second);
+    list.insert(third);
+    expect(list.kthFromEnd(1)).toEqual(3);
+    console.log('***KTHNODE***', list);
+  });
+
 
 });
