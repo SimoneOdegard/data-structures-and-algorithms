@@ -93,3 +93,17 @@ Define a method for append that adds a new node to the end of the list. Define a
 **insertBefore** work in progress
 
 **insertAfter** work in progress
+
+## [Challenge 07 - array-binary-search](./javascript/code-challenges/linkedList/ll.js)
+
+### Challenge Summary
+Write a method where you take a number, k, to find the value of a node that is k from the end of the linked list.
+
+### Challenge Description
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+### Approach & Efficiency
+- I'm still working on the kthFromEnd method
+
+### API
+**kthFromEnd** 
