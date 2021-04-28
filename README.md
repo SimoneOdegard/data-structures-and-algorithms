@@ -103,7 +103,21 @@ Write a method where you take a number, k, to find the value of a node that is k
 Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ### Approach & Efficiency
-- I'm still working on the kthFromEnd method
+I had to google a few ways to understand what exactly was going on with the code. I tried to look at it as if I was working with an array and trying to find the last item in the array. I ended up using index to attempt getting k from the end. I also saw people using helper functions so I wrote out get to have a function that will help me get to the kth from the end.
 
 ### API
-**kthFromEnd** 
+**kthFromEnd** In get, I set index to default -1. If index is less than 0 (a negative number) or if it was longer than the linked list, it would return null. Next I set this.head to current. I created a for loop and you'll be looping through current to equal current.next so you're looping through the entire linklist. At the end of the loop, you would return the final value of current aka the link list. Next I created my kthFromEnd function. If k was less than 0, it would return null so negative numbers do not work. Besides that, you'll run the .get function, find the length of the list, minus one to line up the numbers in your index and minus the value of k which was how many spots you want to move from the end. You would then return that final answer.
+
+## [Challenge 08 - array-binary-search](./javascript/code-challenges/llZip/ll-zip.js)
+
+### Challenge Summary
+Write a function that will zip two linked lists together into one list. Nodes from list1 will alternate with list2.
+
+### Challenge Description
+Write a function called zipLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+### Approach & Efficiency
+- I want to find a way to append items in each list to a new list
+
+### API
+**zipLists** I created a new LinkedList as well as created a count for my list. I try to find the max length of list1 vs list2 to know how many times I need to loop through my for loop. In my for loop, I have conditionals where if my list1 has something in the index, then I will append it to my new list. I do the same thing with my list2. Outside of my loop, I return the answer which would be the new LinkedList.
