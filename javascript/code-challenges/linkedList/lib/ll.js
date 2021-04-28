@@ -5,6 +5,7 @@ const Node = require('./node.js');
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = null;
   }
 
 
@@ -22,6 +23,7 @@ class LinkedList {
 
       current.next = node;
     }
+    this.length += 1;
     return this;
   }
 
@@ -63,6 +65,7 @@ class LinkedList {
 
       current.next = node;
     }
+    this.length += 1;
     return this;
   }
 
@@ -141,7 +144,6 @@ class LinkedList {
   }
 
   kthFromEnd(k = 0) {
-
     if (k < 0) return null;
 
     return this.get(this.length - 1 - k);
