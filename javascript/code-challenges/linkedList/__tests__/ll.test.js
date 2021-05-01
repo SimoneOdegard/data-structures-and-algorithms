@@ -126,26 +126,68 @@ describe('**Linked List**', () => {
     console.log('INSERTBEFORE LIST TESTING THIS OUT', list);
   });
 
-  it('should insert after a node in the middle of the linked list',  () => {
+  xit('should insert after a node in the middle of the linked list',  () => {
     
   });
 
-  it('should insert a node after the last node of the linked list',  () => {
+  xit('should insert a node after the last node of the linked list',  () => {
     
   });
 
   /* === kthFromEnd === */
-  it('should work',  () => {
+  it('should not work when k is greater than the length of the linked list',  () => {
     let list = new LL();
     let first = 1;
     let second = 2;
     let third = 3;
+    let fourth = 4;
     
-    list.insert(first);
-    list.insert(second);
-    list.insert(third);
+    list.append(first);
+    list.append(second);
+    list.append(third);
+    list.append(fourth);
     expect(list.kthFromEnd(1)).toEqual(3);
-    console.log('***KTHNODE***', list);
+    // console.log('***KTHNODE***', list);
+  });
+
+  it('should return null when k is the same as the link list length',  () => {
+    let list = new LL();
+    let first = 1;
+    
+    list.append(first);
+    expect(list.kthFromEnd(1)).toEqual(null);
+  });
+
+  it('should not work when k is not a positive integer',  () => {
+    let list = new LL();
+    let first = 1;
+    let second = 2;
+    
+    list.append(first);
+    list.append(second);
+    expect(list.kthFromEnd(-1)).toEqual(null);
+  });
+  
+  it('should return null when the linked list is the length of 1',  () => {
+    let list = new LL();
+    let first = 1;
+    
+    list.append(first);
+    expect(list.kthFromEnd(1)).toEqual(null);
+  });
+
+  it('should work when k is somewhere in the middle of a linked list',  () => {
+    let list = new LL();
+    let first = 1;
+    let second = 2;
+    let third = 3;
+    let fourth = 4;
+    
+    list.append(first);
+    list.append(second);
+    list.append(third);
+    list.append(fourth);
+    expect(list.kthFromEnd(2)).toEqual(2);
   });
 
 
