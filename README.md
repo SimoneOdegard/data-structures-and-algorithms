@@ -121,3 +121,44 @@ Write a function called zipLists which takes two linked lists as arguments. Zip 
 
 ### API
 **zipLists** I created a new LinkedList as well as created a count for my list. I try to find the max length of list1 vs list2 to know how many times I need to loop through my for loop. In my for loop, I have conditionals where if my list1 has something in the index, then I will append it to my new list. I do the same thing with my list2. Outside of my loop, I return the answer which would be the new LinkedList.
+
+## [Challenge 08 - array-binary-search](./javascript/code-challenges/stacksAndQueues/stacks-and-queues.js)
+
+### Challenge Summary
+Write methods that will push, pop, peek, and isEmpty for a Stack class. Write methods that will enqueue, dequeue, peek, and isEmpty for a Queue class.
+
+### Challenge Description
+- Create a Node class that has properties for the value stored in the Node, and a pointer to the next node.
+- Create a Stack class that has a top property. It creates an empty Stack when instantiated.
+  - This object should be aware of a default empty value assigned to top when the stack is created.
+  - Define a method called push which takes any value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
+  - Define a method called pop that does not take any argument, removes the node from the top of the stack, and returns the node’s value.
+  Should raise exception when called on empty stack
+  - Define a method called peek that does not take an argument and returns the value of the node located on top of the stack, without removing it from the stack.
+  - Should raise exception when called on empty stack
+  - Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the stack is empty.
+- Create a Queue class that has a front property. It creates an empty Queue when instantiated.
+  - This object should be aware of a default empty value assigned to front when the queue is created.
+  - Define a method called enqueue which takes any value as an argument and adds a new node with that value to the back of the queue with an O(1) Time performance.
+  - Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
+  - Should raise exception when called on empty queue
+  - Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
+  - Should raise exception when called on empty queue
+  - Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the queue is empty.
+
+### Approach & Efficiency
+- **push** I want to add new node(s) to the top of the stack
+- **pop** I want to remove node(s) from the top of the stack
+- **peek** I want to see what node is located on the top of the stack
+- **enqueue** I want to add new node(s) to the back of the queue
+- **dequeue** I want to remove node(s) from the front of the queue
+- **peek** I want to see what node is located in the front of the queue
+- **isEmpty** I want to see if the stack/queue is empty
+
+### API
+- **push** It is creating a key on itself, called the evaluation of this.length. We then assign it to the parameter called value. Once that is completed, this.length is then incremented by 1. We then return this.
+- **pop** We first find if the stack is empty. If the length is equal to 0, it will return the string 'empty stack'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
+- **enqueue** It is creating a key on itself, called the evaluation of this.length. We then assign it to the parameter called value. Once that is completed, this.length is then incremented by 1. We then return this.
+- **dequeue** We first find if the queue is empty. If the length is equal to 0, it will return the string 'empty queue'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
+- **peek** For both stack and queue, I want to see what node is at the top of the stack or the front of the queue. First we see if it is empty. If this.length is 0, it will return empty. Else, it will continue with the code. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. 
+- **isEmpty** For both stack and queue, isEmpty is trying to see if the stack/queue is empty. To determine that, if the length is 0, then it will return true. Else, if there is anything inside of the stack/queue, it will return false.
