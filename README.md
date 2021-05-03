@@ -162,3 +162,65 @@ Write methods that will push, pop, peek, and isEmpty for a Stack class. Write me
 - **dequeue** We first find if the queue is empty. If the length is equal to 0, it will return the string 'empty queue'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
 - **peek** For both stack and queue, I want to see what node is at the top of the stack or the front of the queue. First we see if it is empty. If this.length is 0, it will return empty. Else, it will continue with the code. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. 
 - **isEmpty** For both stack and queue, isEmpty is trying to see if the stack/queue is empty. To determine that, if the length is 0, then it will return true. Else, if there is anything inside of the stack/queue, it will return false.
+
+## [Challenge 08 - array-binary-search](./javascript/code-challenges/stacksAndQueues/stacks-and-queues.js)
+
+### Challenge Summary
+Write methods that will push, pop, peek, and isEmpty for a Stack class. Write methods that will enqueue, dequeue, peek, and isEmpty for a Queue class.
+
+### Challenge Description
+- Create a Node class that has properties for the value stored in the Node, and a pointer to the next node.
+- Create a Stack class that has a top property. It creates an empty Stack when instantiated.
+  - This object should be aware of a default empty value assigned to top when the stack is created.
+  - Define a method called push which takes any value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
+  - Define a method called pop that does not take any argument, removes the node from the top of the stack, and returns the node’s value.
+  Should raise exception when called on empty stack
+  - Define a method called peek that does not take an argument and returns the value of the node located on top of the stack, without removing it from the stack.
+  - Should raise exception when called on empty stack
+  - Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the stack is empty.
+- Create a Queue class that has a front property. It creates an empty Queue when instantiated.
+  - This object should be aware of a default empty value assigned to front when the queue is created.
+  - Define a method called enqueue which takes any value as an argument and adds a new node with that value to the back of the queue with an O(1) Time performance.
+  - Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
+  - Should raise exception when called on empty queue
+  - Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
+  - Should raise exception when called on empty queue
+  - Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the queue is empty.
+
+### Approach & Efficiency
+- **push** I want to add new node(s) to the top of the stack
+- **pop** I want to remove node(s) from the top of the stack
+- **peek** I want to see what node is located on the top of the stack
+- **enqueue** I want to add new node(s) to the back of the queue
+- **dequeue** I want to remove node(s) from the front of the queue
+- **peek** I want to see what node is located in the front of the queue
+- **isEmpty** I want to see if the stack/queue is empty
+
+### API
+- **push** It is creating a key on itself, called the evaluation of this.length. We then assign it to the parameter called value. Once that is completed, this.length is then incremented by 1. We then return this.
+- **pop** We first find if the stack is empty. If the length is equal to 0, it will return the string 'empty stack'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
+- **enqueue** It is creating a key on itself, called the evaluation of this.length. We then assign it to the parameter called value. Once that is completed, this.length is then incremented by 1. We then return this.
+- **dequeue** We first find if the queue is empty. If the length is equal to 0, it will return the string 'empty queue'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
+- **peek** For both stack and queue, I want to see what node is at the top of the stack or the front of the queue. First we see if it is empty. If this.length is 0, it will return empty. Else, it will continue with the code. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. 
+- **isEmpty** For both stack and queue, isEmpty is trying to see if the stack/queue is empty. To determine that, if the length is 0, then it will return true. Else, if there is anything inside of the stack/queue, it will return false.
+
+## [Challenge 11 - array-binary-search](./javascript/code-challenges/queueWithStacks/queue-with-stacks.js)
+
+### Challenge Summary
+Create a new class called PseudoQueue, use this to implement a queue with 2 stacks.
+
+### Challenge Description
+Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize 2 Stack objects. Ensure that you create your class with the following methods:
+
+- enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+- dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.
+
+### Approach & Efficiency
+- **enqueue** I want to add/push to the stack
+- **dequeue** I want to remove/pop off the stack
+
+### API
+- **enqueue** If there is stuff in stack1, then we will push the popped item from stack1 into stack2. We will also push the value from the params into stack1. Likewise, if there is stuff in stack2, then we will push the popped item from stack2 into stack1.
+- **dequeue** When there is stuff in stack1, we will push the stuff that was popped from stack1 into stack2. We will return the item that we are popping because that's what is being removed.
