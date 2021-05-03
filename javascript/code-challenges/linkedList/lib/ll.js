@@ -69,69 +69,50 @@ class LinkedList {
     return this;
   }
 
-  // not working
   insertBefore(value, newVal) {
-    if (value < 0 || value > this.size)
-      return;
-    if (value === 0)
-      this.insert(newVal);
-    else if (value === this.size)
-      this.append(newVal);
-    else {
-      const node = new Node(newVal);
-      let prev = null;
-      let current = this.head;
-      let counter = 0;
-      while(counter < value){
-        prev = current;
-        current = current.next;
-        counter++;
-      }
-      node.next = current;
-      prev.next = node;
-      this.size++;
-    }
-  }
+    let current = this.head;
 
-  // insertBefore(value, newVal) {
-  //   let thisNode = this.head;
-  //   let node = new Node(value);
-  //   let previousNode;
-  //   let currentIndex = 0;
-
-  //   if(!this.head) {
-  //     this.head = node;
-  //   } else {
-  //     while(currentIndex < value){
-  //       currentIndex++;
-  //       previousNode = thisNode;
-  //       thisNode = thisNode.next;
-  //     }
-  //     node.next = thisNode;
-  //     previousNode.next = node;
-  //   }
-  //   length++;
-  // }
-
-  // not working
-  insertAfter(value, newVal) {
-    let node = new Node(value);
-
-    if(!this.head) {
+    if (this.head.value === value) {
+      let node = new Node(newVal);
+      node.next = this.head;
       this.head = node;
-    } else {
-      let current = this.head;
-
-      while(current.next) {
-        current = current.next;
-      }
-
-      current.next = node;
+      return;
     }
-    return this;
+
+    while(current.next) {
+      if (current.next.value === value) {
+        let node = new Node(newVal);
+        node.next = current.next;
+        current.next = node;
+        return;
+      } 
+      current = current.next;
+    }
+  }
+  /*
+    x loop through our linkedlist to find current.next.value = value
+    x if found value, then create a new node for our newVal
+    x point our new node/newVal to current.next
+    point our value to new node/newVal
+
+    edgecase
+    */
+
+  insertAfter(value, newVal) {
+    let current = this.head;
+
+    while(current) {
+      if (current.value === value) {
+        let node = new Node(newVal);
+        node.next = current.next;
+        current.next = node;
+        return;
+      } 
+      current = current.next;
+    }
   }
 
-  get(index = -1){
+  get(index = -1) {
     if (index < 0 || index >= this.length) return null
 
     let current = this.head

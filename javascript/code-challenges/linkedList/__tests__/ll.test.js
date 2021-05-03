@@ -100,38 +100,53 @@ describe('**Linked List**', () => {
     // console.log('multiple added to list', list);
   });
 
-  xit('should insert a node before a node located in the middle of a linked list',  () => {
+  it('should insert a node before a node located in the middle of a linked list',  () => {
     let list = new LL();
-    let first = 1;
-    let second = 2;
-    let third = 3;
+    let first = 'a';
+    let second = 'b';
+    let third = 'c';
 
-    list.insert(first);
-    list.append(second);
-    list.insertBefore(third);
-    expect(list.insertBefore(third)).toEqual([1]);
+    list.append(first);
+    list.append(third);
+    list.insertBefore(third, second);
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> NULL');
 
     // console.log('insertBefore list', list);
     
   });
 
-  xit('should insert a node before the first node of a linked list',  () => {
+  it('should insert a node before the first node of a linked list',  () => {
     let list = new LL();
-    let head = 1;
-    let second = 2;
+    let first = 'a';
+    let second = 'b';
 
-    list.insert(head);
-    list.insertBefore(second);
-    expect(list.insertBefore(second)).toEqual(2);
-    console.log('INSERTBEFORE LIST TESTING THIS OUT', list);
+    list.append(first);
+    list.insertBefore(first, second);
+    expect(list.toString()).toBe('{ b } -> { a } -> NULL');
   });
 
-  xit('should insert after a node in the middle of the linked list',  () => {
-    
+  it('should insert after a node in the middle of the linked list',  () => {
+    let list = new LL();
+    let first = 'a';
+    let second = 'b';
+    let third = 'c';
+
+    list.append(first);
+    list.append(third);
+    list.insertAfter(first, second)
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> NULL');
   });
 
-  xit('should insert a node after the last node of the linked list',  () => {
-    
+  it('should insert a node after the last node of the linked list',  () => {
+    let list = new LL();
+    let first = 'a';
+    let second = 'b';
+    let third = 'c';
+
+    list.append(first);
+    list.append(third);
+    list.insertAfter(third, second)
+    expect(list.toString()).toBe('{ a } -> { c } -> { b } -> NULL');
   });
 
   /* === kthFromEnd === */
