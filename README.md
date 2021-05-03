@@ -84,15 +84,15 @@ Define a method for append that adds a new node to the end of the list. Define a
 
 ### Approach & Efficiency
 - For the method called append, I used Brian's demo code. Append adds to the end.
-- I'm still working on the insertBefore method
-- I'm still working on the insertAfter method
+- Know that we have to loop through our list to find value, once we find current before value, we will insert newVal before.
+- Know that we have to loop through our list to find value, once we find value, we will insert newVal after.
 
 ### API
 **append** The method creates a new node. If the head doesn't exist then it will set the head. Else, it will start the traversal. The while loop will go through everything and creates the actual traversal. When you get to the end you'll see current.next setting the node as the next value. At the end, return this to return the whole list.
 
-**insertBefore** work in progress
+**insertBefore** Set current to this.head. Our edgecase is if head is strict equal to the value, then we will need to create a new node, have the new node point to the original head, then change the new node to be seen as the new head. If it's not at the head, then we will loop through the list to find value. Once we find value, create a new node, have the new node point to the current.next, then have the current node point to the new node. Return to end the while loop.
 
-**insertAfter** work in progress
+**insertAfter** We will loop through the list to find value. Once we find value, create a new node, have the new node point to the current.next, then have the current node point to the new node. Return to end the while loop.
 
 ## [Challenge 07 - array-binary-search](./javascript/code-challenges/linkedList/ll.js)
 
