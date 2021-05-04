@@ -224,3 +224,25 @@ The Stack instances have only push, pop, and peek methods. You should use your o
 ### API
 - **enqueue** If there is stuff in stack1, then we will push the popped item from stack1 into stack2. We will also push the value from the params into stack1. Likewise, if there is stuff in stack2, then we will push the popped item from stack2 into stack1.
 - **dequeue** When there is stuff in stack1, we will push the stuff that was popped from stack1 into stack2. We will return the item that we are popping because that's what is being removed.
+
+## [Challenge 12 - array-binary-search](./javascript/code-challenges/fifoAnimalShelter/fifo-animal-shelter.js)
+
+### Challenge Summary
+Create a new class called AnimalShelter, use this to implement a queue with queues.
+
+### Challenge Description
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+Implement the following methods:
+
+- enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+- dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
+
+### Approach & Efficiency
+- **enqueue** I want to add to the AnimalShelter
+- **dequeue** I want to remove from the AnimalShelter
+
+### API
+- **enqueue** If the animal type is a cat, then we will call the enqueue method from our queue.js. If the animal type is a dog, we will call the enqueue method from our queue.js. Else, we will return null. The enqueue method does the following: It is creating a key on itself, called the evaluation of this.length. We then assign it to the parameter called value. Once that is completed, this.length is then incremented by 1. We then return this.
+
+
+- **dequeue** If the animal type is a cat, we will call the dequeue method from our queue.js. If the animal type is a dog, we will call the dequeue method from our queue. Else, we will return null. The dequeue method does the following: We first find if the queue is empty. If the length is equal to 0, it will return the string 'empty queue'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
