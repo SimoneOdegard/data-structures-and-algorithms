@@ -45,7 +45,7 @@ I used binary search. I had to look up how to use it and found this page: [link 
 ### Solution
 ![code challenge 3](./assets/array-binary-search.png)
 
-## [Challenge 05 - array-binary-search](./javascript/code-challenges/linkedList/ll.js)
+## [Challenge 05 - Linked List 1](./javascript/code-challenges/linkedList/ll.js)
 
 ### Challenge Summary
 Define a method for insert that adds a new node to the head of the list. Define a method called includes that takes any value to return a boolean. Define a method call toString that returns a string of all the values in the list.
@@ -72,7 +72,7 @@ Define a method for insert that adds a new node to the head of the list. Define 
 
 **toString** The method sets thisNode to null and string to an empty string. It goes through the while loop with thisNode. We have our empty string and we're adding the thisNode's value. If it reaches the end and is at thisNode.next which will equal null, then the string will add NULL. thisNode = thiseNode.next; will be the end of the loop and will return the populated string.
 
-## [Challenge 06 - array-binary-search](./javascript/code-challenges/linkedList/ll.js)
+## [Challenge 06 - Linked List 2](./javascript/code-challenges/linkedList/ll.js)
 
 ### Challenge Summary
 Define a method for append that adds a new node to the end of the list. Define a method for insertBefore that adds a new node before a value. Define a method for insertAfter that adds a new node after a value.
@@ -94,7 +94,7 @@ Define a method for append that adds a new node to the end of the list. Define a
 
 **insertAfter** We will loop through the list to find value. Once we find value, create a new node, have the new node point to the current.next, then have the current node point to the new node. Return to end the while loop.
 
-## [Challenge 07 - array-binary-search](./javascript/code-challenges/linkedList/ll.js)
+## [Challenge 07 - Linked List 3](./javascript/code-challenges/linkedList/ll.js)
 
 ### Challenge Summary
 Write a method where you take a number, k, to find the value of a node that is k from the end of the linked list.
@@ -108,7 +108,7 @@ I had to google a few ways to understand what exactly was going on with the code
 ### API
 **kthFromEnd** In get, I set index to default -1. If index is less than 0 (a negative number) or if it was longer than the linked list, it would return null. Next I set this.head to current. I created a for loop and you'll be looping through current to equal current.next so you're looping through the entire linklist. At the end of the loop, you would return the final value of current aka the link list. Next I created my kthFromEnd function. If k was less than 0, it would return null so negative numbers do not work. Besides that, you'll run the .get function, find the length of the list, minus one to line up the numbers in your index and minus the value of k which was how many spots you want to move from the end. You would then return that final answer.
 
-## [Challenge 08 - array-binary-search](./javascript/code-challenges/llZip/ll-zip.js)
+## [Challenge 08 - LL zip](./javascript/code-challenges/llZip/ll-zip.js)
 
 ### Challenge Summary
 Write a function that will zip two linked lists together into one list. Nodes from list1 will alternate with list2.
@@ -122,7 +122,7 @@ Write a function called zipLists which takes two linked lists as arguments. Zip 
 ### API
 **zipLists** I created a new LinkedList as well as created a count for my list. I try to find the max length of list1 vs list2 to know how many times I need to loop through my for loop. In my for loop, I have conditionals where if my list1 has something in the index, then I will append it to my new list. I do the same thing with my list2. Outside of my loop, I return the answer which would be the new LinkedList.
 
-## [Challenge 08 - array-binary-search](./javascript/code-challenges/stacksAndQueues/stacks-and-queues.js)
+## [Challenge 08 - Stacks and Queues](./javascript/code-challenges/stacksAndQueues/stacks-and-queues.js)
 
 ### Challenge Summary
 Write methods that will push, pop, peek, and isEmpty for a Stack class. Write methods that will enqueue, dequeue, peek, and isEmpty for a Queue class.
@@ -163,7 +163,7 @@ Write methods that will push, pop, peek, and isEmpty for a Stack class. Write me
 - **peek** For both stack and queue, I want to see what node is at the top of the stack or the front of the queue. First we see if it is empty. If this.length is 0, it will return empty. Else, it will continue with the code. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. 
 - **isEmpty** For both stack and queue, isEmpty is trying to see if the stack/queue is empty. To determine that, if the length is 0, then it will return true. Else, if there is anything inside of the stack/queue, it will return false.
 
-## [Challenge 08 - array-binary-search](./javascript/code-challenges/stacksAndQueues/stacks-and-queues.js)
+## [Challenge 08 - Stacks and Queues](./javascript/code-challenges/stacksAndQueues/stacks-and-queues.js)
 
 ### Challenge Summary
 Write methods that will push, pop, peek, and isEmpty for a Stack class. Write methods that will enqueue, dequeue, peek, and isEmpty for a Queue class.
@@ -204,7 +204,7 @@ Write methods that will push, pop, peek, and isEmpty for a Stack class. Write me
 - **peek** For both stack and queue, I want to see what node is at the top of the stack or the front of the queue. First we see if it is empty. If this.length is 0, it will return empty. Else, it will continue with the code. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. 
 - **isEmpty** For both stack and queue, isEmpty is trying to see if the stack/queue is empty. To determine that, if the length is 0, then it will return true. Else, if there is anything inside of the stack/queue, it will return false.
 
-## [Challenge 11 - array-binary-search](./javascript/code-challenges/queueWithStacks/queue-with-stacks.js)
+## [Challenge 11 - Queue with Stacks](./javascript/code-challenges/queueWithStacks/queue-with-stacks.js)
 
 ### Challenge Summary
 Create a new class called PseudoQueue, use this to implement a queue with 2 stacks.
@@ -225,7 +225,7 @@ The Stack instances have only push, pop, and peek methods. You should use your o
 - **enqueue** If there is stuff in stack1, then we will push the popped item from stack1 into stack2. We will also push the value from the params into stack1. Likewise, if there is stuff in stack2, then we will push the popped item from stack2 into stack1.
 - **dequeue** When there is stuff in stack1, we will push the stuff that was popped from stack1 into stack2. We will return the item that we are popping because that's what is being removed.
 
-## [Challenge 12 - array-binary-search](./javascript/code-challenges/fifoAnimalShelter/fifo-animal-shelter.js)
+## [Challenge 12 - Animal Shelter](./javascript/code-challenges/fifoAnimalShelter/fifo-animal-shelter.js)
 
 ### Challenge Summary
 Create a new class called AnimalShelter, use this to implement a queue with queues.
@@ -246,3 +246,21 @@ Implement the following methods:
 
 
 - **dequeue** If the animal type is a cat, we will call the dequeue method from our queue.js. If the animal type is a dog, we will call the dequeue method from our queue. Else, we will return null. The dequeue method does the following: We first find if the queue is empty. If the length is equal to 0, it will return the string 'empty queue'. We declared a variable called result. We assign result to a property of itself at this.length minus 1. We decrement the this.length by 1. To properly pop, we need to delete. We will delete at property of this.length. In the end, we return result.
+
+## [Challenge 13 - multiBracketValidation](./javascript/code-challenges/multiBracketValidation/multi-bracket-validation.js)
+
+### Challenge Summary
+Write a function that validates if there are matching brackets.
+
+### Challenge Description
+On your main file, create a function called multiBracketValidation(input) Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
+
+- Round Brackets : ()
+- Square Brackets : []
+- Curly Brackets : {}
+
+### Approach & Efficiency
+- I want to look for bracket matches. I will use a counter to add 1 if there is an opening bracket and a -1 if there is a closing bracket. That will make my count 0 and I will return true.
+
+### API
+- I created a count and set it to 0 so that I can use that to keep track of my brackets. We loop through the input looking for (, [, and {. If it is there, we will increase the count. Next we will look for ), ], }. If we couldn't find (, [, and { from the first if, count will be 0 which will return false meaning there is no match. Else, if they find a match, we will -1 on the count. Finally, if our final count is 0, then we will return true because that means there were bracket matches. If there is 1 because it only found the opening bracket, then it will return false.
