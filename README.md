@@ -291,3 +291,17 @@ On your main file, create a function called multiBracketValidation(input) Your f
 - **postOrder** Same process as preOrder but will go left first, right next, then read the data.
 - **add/addNode** add is a helper method that creates a new node that will be inserted. If the root is null, we would need to add a new node at the root. Else, it will find the correct position where the new node will be added. In the addNode method, we will move over the tree to find the location to add a node. If the value is less than the node, it will move to the left. Once it finds a null node, it will add the node there. If it's not null, it will recur unti the null is found. It does the same thing for moving to the right. If right is null, it will add the node here. Else, if it's not null, it will recur until the null is found.
 - **contains** contains calls containsNode. From here, if node/the root is null, then we will return false, else, if value and node/the root is equal, we will return true. Else, we will go down the left or the right and call our function to be recursive to loop through our process. We are looking for the value and if it doesn't show up, then we will return null. We return on lines 36, 45, and 47 so that we can climb back up the tree after tunneling down.
+
+## [Challenge 16 - trees](./javascript/code-challenges/tree/tree.js)
+
+### Challenge Summary
+- write a method that finds the maximum value
+
+### Challenge Description
+- Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+### Approach & Efficiency
+- I need to find a way to traverse down the right of the tree to find the largest value
+
+### API
+- We'll set our node to root, then we loop through going down to the very right position looking for our biggest value.
