@@ -15,24 +15,29 @@ let five = new Node(5);
 describe('TREES', () => {
 
   it('should successfully instantiate an empty tree',  () => {
-    let first = 1;
-    let second = 2;
-    pseudo.stack1.push(first);
-    pseudo.stack1.push(second);
+    let bst = new binarySearchTree();
 
-    pseudo.enqueue(5);
+    bst.add(1);
 
-    expect(pseudo.stack1.length).toEqual(3);
+    expect(bst.root.value).toEqual(1);
   });
 
   it('should successfully instantiate a tree with a single root node',  () => {
+    let bst = new binarySearchTree();
 
-    expect(pseudo.stack1.length).toEqual(3);
+    bst.add(3);
+    bst.add(5);
+
+    expect(bst).toEqual({"root": {"left": null, "right": {"left": null, "right": null, "value": 5}, "value": 3}});
   });
 
   it('should successfully add a left child and right child to a single root node',  () => {
+    let bst = new binarySearchTree();
+    bst.add(10);
+    bst.add(2);
+    bst.add(5);
 
-    expect(pseudo.stack1.length).toEqual(3);
+    expect(bst).toEqual({"root": {"left": {"left": null, "right": {"left": null, "right": null, "value": 5}, "value": 2}, "right": null, "value": 10}});
   });
 
   it('should successfully return a collection from a preorder traversal',  () => {
