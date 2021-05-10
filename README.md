@@ -304,4 +304,4 @@ On your main file, create a function called multiBracketValidation(input) Your f
 - I need to find a way to traverse down the right of the tree to find the largest value
 
 ### API
-- We'll set our node to root, then we loop through going down to the very right position looking for our biggest value.
+- We'll set our node to root, then we loop through going down to the very right position looking for our biggest value. If root is null, then that means there is nothing in the tree so it will return null.

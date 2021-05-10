@@ -42,14 +42,14 @@ class BinaryTree {
   }
 
   findMaximumValue() {
-    let node;
-    if (this.root) {
-      node = this.root;
+    let node = this.root;
+    if (node) {
       while (node.right) {
         node = node.right;
       }
       return node.value;
     }
+    return null;
   }
 
 }
