@@ -73,5 +73,16 @@ describe('TREES', () => {
     expect(tree.postOrder()).toEqual([2, 4, 5, 3, 1]);
   });
 
+  it('should successfully return the maximum value in the tree',  () => {
+    one.left = two;
+    one.right = three;
+    three.left = four;
+    three.right = five;
+
+    let tree = new binaryTree(one);
+    
+    expect(tree.findMaximumValue()).toEqual(5);
+  });
+
 
 });
