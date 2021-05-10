@@ -264,3 +264,30 @@ On your main file, create a function called multiBracketValidation(input) Your f
 
 ### API
 - I created a count and set it to 0 so that I can use that to keep track of my brackets. We loop through the input looking for (, [, and {. If it is there, we will increase the count. Next we will look for ), ], }. If we couldn't find (, [, and { from the first if, count will be 0 which will return false meaning there is no match. Else, if they find a match, we will -1 on the count. Finally, if our final count is 0, then we will return true because that means there were bracket matches. If there is 1 because it only found the opening bracket, then it will return false.
+
+## [Challenge 15 - trees](./javascript/code-challenges/tree/tree.js)
+
+### Challenge Summary
+- Write 3 methods that will traverse binary trees.
+- Write a method called add that will add a node in the correct location of a binary search tree
+- Write a method called contains that will return a boolean indicating if a value is in the tree
+
+### Challenge Description
+- Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
+- Create a BinaryTree class
+  - Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+- Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+
+- Create a BinarySearchTree class
+  - Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+  - Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
+### Approach & Efficiency
+- I need to find a way to traverse the tree using preOrder, inOrder, and postOrder
+
+### API
+- **preOrder** Create an empty array to have something to push into. We first read the data. Then go left. If node.left is null, we are at a leaf. If there is a left value, it will recur and continue moving down the tree until it finds the leaf. Then it will push the results. You will do the same and go right. If node.right is null, we are at a leaf. If there is a right value, it will recur and continue moving down the tree until it finds the leaf. It will push the results. _walk(this.root) kicks off the function. It will run once but it will call itself to walk through the whole tree until it's walked through all of the tree.
+- **inOrder** Same process as preOrder but will go left first, then read the data, then go right.
+- **postOrder** Same process as preOrder but will go left first, right next, then read the data.
+- **add/addNode** add is a helper method that creates a new node that will be inserted. If the root is null, we would need to add a new node at the root. Else, it will find the correct position where the new node will be added. In the addNode method, we will move over the tree to find the location to add a node. If the value is less than the node, it will move to the left. Once it finds a null node, it will add the node there. If it's not null, it will recur unti the null is found. It does the same thing for moving to the right. If right is null, it will add the node here. Else, if it's not null, it will recur until the null is found.
+- **contains** contains calls containsNode. From here, if node/the root is null, then we will return false, else, if value and node/the root is equal, we will return true. Else, we will go down the left or the right and call our function to be recursive to loop through our process. We are looking for the value and if it doesn't show up, then we will return null. We return on lines 36, 45, and 47 so that we can climb back up the tree after tunneling down.
