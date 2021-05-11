@@ -305,3 +305,18 @@ On your main file, create a function called multiBracketValidation(input) Your f
 
 ### API
 - We'll set our node to root, then we loop through going down to the very right position looking for our biggest value. If root is null, then that means there is nothing in the tree so it will return null.
+
+
+## [Challenge 17 - trees](./javascript/code-challenges/tree/tree.js)
+
+### Challenge Summary
+- write a method that traverses a binaryTree with breadth first (line by line)
+
+### Challenge Description
+- Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
+### Approach & Efficiency
+- I need to find a way to traverse down the tree line by line queueing the siblings
+
+### API
+- We have a results array, which will be our final array. A queue array to be our queue, and assigned node to this.root. To begin, we push this.root into the queue. We need to run a while loop to loop through the queue at it's length. We need to use .shift to remove node values from the queue array. From there, we return the removed node value and push it into the visited array. We will look at the nodes and look at their children from left to right and add that to the queue. We do this until we moved down the tree. Pushing into queue, using shift to remove from queue, and pushing the removed values into our results array.

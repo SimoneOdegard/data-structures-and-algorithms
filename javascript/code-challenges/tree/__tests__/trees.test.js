@@ -84,5 +84,16 @@ describe('TREES', () => {
     expect(tree.findMaximumValue()).toEqual(5);
   });
 
+  it('should successfully return an array of the items in the tree using breadth first',  () => {
+    one.left = two;
+    one.right = three;
+    three.left = four;
+    three.right = five;
+
+    let tree = new binaryTree(one);
+    
+    expect(tree.breadthFirst()).toEqual([1, 2, 3, 4, 5]);
+  });
+
 
 });
