@@ -320,3 +320,23 @@ On your main file, create a function called multiBracketValidation(input) Your f
 
 ### API
 - We have a results array, which will be our final array. A queue array to be our queue, and assigned node to this.root. To begin, we push this.root into the queue. We need to run a while loop to loop through the queue at it's length. We need to use .shift to remove node values from the queue array. From there, we return the removed node value and push it into the visited array. We will look at the nodes and look at their children from left to right and add that to the queue. We do this until we moved down the tree. Pushing into queue, using shift to remove from queue, and pushing the removed values into our results array.
+
+
+## [Challenge 18 - trees](./javascript/code-challenges/fizzBuzzTree/fizz-buzz-tree.js)
+
+### Challenge Summary
+- write a function that will replace the value with fizz when divisible by 3, buzz when divisible by 5, and fizzbuzz when divisible by both. have it replace the value in a string if divisible by neither.
+
+### Challenge Description
+- Write a function called FizzBuzzTree which takes a k-ary tree as an argument. Without utilizing any of the built-in methods available to your language, determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
+  - If the value is divisible by 3, replace the value with “Fizz”
+  - If the value is divisible by 5, replace the value with “Buzz”
+  - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+  - If the value is not divisible by 3 or 5, simply turn the number into a String.
+- Return a new tree.
+
+### Approach & Efficiency
+- I need to traverse the tree and find when the values are divisible by 3, 5 , or both, and when they're not divisible by either.
+
+### API
+- We we start off by saying if there isn't a root, then we will need to return null. We will let results equal tree because that's what we want to return in the end. We will _walk recursively through the tree looking for the values. If divisible by 15 (3 and 5), then we will the value will be fizzbuzz. If divisible by 3, the value will be fizz. If divisible by 5, the value will be buzz. If neither, it will return a string with the value in it. It will resursively walk down the tree going to the left and to the right until all nodes have been evaluated.
