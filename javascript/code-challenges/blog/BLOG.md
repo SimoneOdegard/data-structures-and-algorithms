@@ -90,3 +90,56 @@ Next we will use recursion to combine the left and right.
 ### merge
 
 We need to use merge to merge the two arrays: left and right. The while loop is where you will figure out what numbers belong on the left and right. We will then use the second while loop to properly push the correct numbers into the left and right arrays.
+
+# Quick Sort
+
+## Pseudocode
+
+```
+ALGORITHM QuickSort(arr, left, right)
+    if left < right
+        // Partition the array by setting the position of the pivot value 
+        DEFINE position <-- Partition(arr, left, right)
+        // Sort the left
+        QuickSort(arr, left, position - 1)
+        // Sort the right
+        QuickSort(arr, position + 1, right)
+
+ALGORITHM Partition(arr, left, right)
+    // set a pivot value as a point of reference
+    DEFINE pivot <-- arr[right]
+    // create a variable to track the largest index of numbers lower than the defined pivot
+    DEFINE low <-- left - 1
+    for i <- left to right do
+        if arr[i] <= pivot
+            low++
+            Swap(arr, i, low)
+
+     // place the value of the pivot location in the middle.
+     // all numbers smaller than the pivot are on the left, larger on the right. 
+     Swap(arr, right, low + 1)
+    // return the pivot index point
+     return low + 1
+
+ALGORITHM Swap(arr, i, low)
+    DEFINE temp;
+    temp <-- arr[i]
+    arr[i] <-- arr[low]
+    arr[low] <-- temp
+```
+
+## Trace
+
+We will trace through the array [8, 4, 23, 42, 16, 15]
+
+## What is happening
+
+Quick Sort is about dividing elements into smaller parts. It selects an item in the array to become the pivot and starts dividing from there.
+
+To start, you'll first find if the left item is smaller than the right, if it is, we'll call our partition function. 
+
+In partition, you'll assign your pivot which will be the most right item in the array. You'll set low to the most left item minus 1. You'll loop through from left to right. If the item is less than or equal to the pivot, you're going to increment low and call swap.
+
+In swap, we're setting temp equal to the item in the array. Then setting the item in the array equal to the array at low. Then array at low to temp.
+
+Back to partition, outside of the for loop we're going to call swap again and return low + 1. We'll go back to quickSort and run through the function recursively.
