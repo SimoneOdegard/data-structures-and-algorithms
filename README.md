@@ -106,7 +106,7 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 I had to google a few ways to understand what exactly was going on with the code. I tried to look at it as if I was working with an array and trying to find the last item in the array. I ended up using index to attempt getting k from the end. I also saw people using helper functions so I wrote out get to have a function that will help me get to the kth from the end.
 
 ### API
-**kthFromEnd** In get, I set index to default -1. If index is less than 0 (a negative number) or if it was longer than the linked list, it would return null. Next I set this.head to current. I created a for loop and you'll be looping through current to equal current.next so you're looping through the entire linklist. At the end of the loop, you would return the final value of current aka the link list. Next I created my kthFromEnd function. If k was less than 0, it would return null so negative numbers do not work. Besides that, you'll run the .get function, find the length of the list, minus one to line up the numbers in your index and minus the value of k which was how many spots you want to move from the end. You would then return that final answer.
+**kthFromEnd** In get, I set index to default -1. If index is less than 0 (a negative number) or if it was longer than the linked list, it would return null. Next I set this.head to current. I created a for loop and you'll be looping through current to equal current.next so you're looping through the entire linklist. At the end of the loop, you would return the final value of current aka the link list. Next I created my kthFromEnd function. If k was less than 0, it would return null so negative numbers do not work. Besides that, you'll run the .get function, find the length of the list, minus one to line up the numbers in your index and minus the value of k which was how many spots you want to move from the end. You would then return that final answer
 
 ## [Challenge 08 - LL zip](./javascript/code-challenges/llZip/ll-zip.js)
 
@@ -325,9 +325,11 @@ On your main file, create a function called multiBracketValidation(input) Your f
 ## [Challenge 18 - trees](./javascript/code-challenges/fizzBuzzTree/fizz-buzz-tree.js)
 
 ### Challenge Summary
+
 - write a function that will replace the value with fizz when divisible by 3, buzz when divisible by 5, and fizzbuzz when divisible by both. have it replace the value in a string if divisible by neither.
 
 ### Challenge Description
+
 - Write a function called FizzBuzzTree which takes a k-ary tree as an argument. Without utilizing any of the built-in methods available to your language, determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
   - If the value is divisible by 3, replace the value with “Fizz”
   - If the value is divisible by 5, replace the value with “Buzz”
@@ -336,7 +338,35 @@ On your main file, create a function called multiBracketValidation(input) Your f
 - Return a new tree.
 
 ### Approach & Efficiency
+
 - I need to traverse the tree and find when the values are divisible by 3, 5 , or both, and when they're not divisible by either.
 
 ### API
+
 - We we start off by saying if there isn't a root, then we will need to return null. We will let results equal tree because that's what we want to return in the end. We will _walk recursively through the tree looking for the values. If divisible by 15 (3 and 5), then we will the value will be fizzbuzz. If divisible by 3, the value will be fizz. If divisible by 5, the value will be buzz. If neither, it will return a string with the value in it. It will resursively walk down the tree going to the left and to the right until all nodes have been evaluated.
+
+## [Challenge 34 - hashtable](./javascript/code-challenges/hashtable/hashtable.js)
+
+### Challenge Summary
+
+- Write 4 methods, add, get, contains, hash. 
+
+### Challenge Description
+
+Implement a Hashtable with the following methods:
+
+- ```add```: takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
+- ```get```: takes in the key and returns the value from the table.
+- ```contains```: takes in the key and returns a boolean, indicating if the key exists in the table already.
+- ```hash```: takes in an arbitrary key and returns an index in the collection.
+
+### Approach & Efficiency
+
+- We wrote set and hash in class together so I had to write get and contains. ```get``` is to get the item from the hashtable and ```contains``` is to see if the hashtable contains a certain item.
+
+### API
+
+- ```set```: First you create a new linked list with a single item and put it in the proper index spot. If you have a collision, you'll then append to a pre-existing linked list.
+- ```get```: First you'll have the hash number equal to hash. Then you'll return this.storage at the index of hash to grab the item you're looking for. It will return a LL with the key/value pair. If the key isn't there, it will return undefined.
+- ```contains```: Set the hash number equal to hash. If the key is not in the hashtable it will be undefined thus returning false. Else, you'll need to loop through current (this.storage[hash].head). If the current value at index 0 is equal to the key, then you'll return true.
+- ```hash```: Hash generates a hash number between 0 and the size of the array. it then takes a string and splits it into an array. this is done to generate the actual hash. it grabs the char code for each character in the string array, then multiples the accumulated set by a prime number. the remainder is then grabbed and it is the index placement.
