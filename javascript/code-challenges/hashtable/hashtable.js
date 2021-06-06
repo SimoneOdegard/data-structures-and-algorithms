@@ -94,4 +94,4 @@ hashmap.set('solomon', 'thomas');
 hashmap.set('christie', 'chen');
 hashmap.set('simone', 'mo');
 
-console.log(hashmap.get('simone'));
+console.log(hashmap.get('tom'));
