@@ -370,3 +370,22 @@ Implement a Hashtable with the following methods:
 - ```get```: First you'll have the hash number equal to hash. Then you'll return this.storage at the index of hash to grab the item you're looking for. It will return a LL with the key/value pair. If the key isn't there, it will return undefined.
 - ```contains```: Set the hash number equal to hash. If the key is not in the hashtable it will be undefined thus returning false. Else, you'll need to loop through current (this.storage[hash].head). If the current value at index 0 is equal to the key, then you'll return true.
 - ```hash```: Hash generates a hash number between 0 and the size of the array. it then takes a string and splits it into an array. this is done to generate the actual hash. it grabs the char code for each character in the string array, then multiples the accumulated set by a prime number. the remainder is then grabbed and it is the index placement.
+
+## [Challenge 35 - repeated-word](./javascript/code-challenges/repeatedWord/repeated-word.js)
+
+### Challenge Summary
+
+- Write a function that finds the first duplicated word
+
+### Challenge Description
+
+- Write a function that accepts a lengthy string parameter.
+- Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+
+### Approach & Efficiency
+
+- Have to split the string apart and loop through the string to find the duplicates
+
+### API
+
+- First take the string and split it. Also create an empty array to push into. Loop through the string. If the string at the first occurrence does not equal the string at the last occurrence, you'll have another if conditional where if the arr includes the string at index i, then we'll push that string[i] into the empty arr. We'll also return arr.join("") which creates and returns a new string by concatenating all of the elements in the array.
