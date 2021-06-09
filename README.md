@@ -390,7 +390,7 @@ Implement a Hashtable with the following methods:
 
 - First take the string and split it. Also create an empty array to push into. Loop through the string. If the string at the first occurrence does not equal the string at the last occurrence, you'll have another if conditional where if the arr includes the string at index i, then we'll push that string[i] into the empty arr. We'll also return arr.join("") which creates and returns a new string by concatenating all of the elements in the array.
 
-## [Challenge 36 - left-join](./javascript/code-challenges/leftJoin/left-join.js)
+## [Challenge 37 - left-join](./javascript/code-challenges/leftJoin/left-join.js)
 
 ### Challenge Summary
 
@@ -412,4 +412,4 @@ Implement a Hashtable with the following methods:
 
 ### API
 
-- Will update after code is working
+- leftJoin will take in hashmap1 and hashmap2. Create an empty array named results that you will push the result into. Loop through the first hashmap. If that hashmap1 exists, create newArr with the values. Next, loop through hashmap2. If hashmap2 exists and if hashmap1 key (head.val[0]) matches the hashmap2 key (head.val[0]) then you'll push hashmap2 into the newArr. Push newArr into the original results array and return that results array.
